@@ -1,0 +1,201 @@
+  <!DOCTYPE html>
+  <!-- === Coding by Images | www.Imagesweb.com === -->
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+      <script src="script.js" defer></script>
+
+      <!-- ===== CSS ===== -->
+      <!-- <link rel="stylesheet" href="style.css"> -->
+          
+      <!-- ===== Boxicons CSS ===== -->
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+      <link rel="icon" type="icon" href="./images/i-logo-01.png" >
+      <title>Images</title>
+  </head>
+  <body>
+      <nav>
+          <div class="nav-bar">
+              <i class='bx bx-menu sidebarOpen' ></i>
+              <span class="logo navLogo"><a href="index.html"> <img src="./images/i-logo-01.png" height="50" width="50"></a></span>
+              <span class="logo navLogo"><a href="index.html">Images</a></span>
+
+              <div class="menu">
+                  <div class="logo-toggle">
+                      <span class="logo"><a href="index.html">Images</a></span>
+                      <i class='bx bx-x siderbarClose'></i>
+                  </div>
+
+                  <ul class="nav-links">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="profile.html">Profile</a></li>
+                      <li><a href="logout.html">Log Out</a></li>
+                  </ul>
+              </div>
+
+              <div class="darkLight-searchBox">
+                  <div class="dark-light">
+                      <i class='bx bx-moon moon'></i>
+                      <i class='bx bx-sun sun'></i>
+                  </div>
+
+
+                  <div class="searchBox">
+                    <div class="searchToggle">
+                      <i class='bx bx-x cancel'></i>
+                      <i class='bx bx-search search'></i>
+                    </div>
+
+                      <div class="search-field">
+                          <input type="text" placeholder="Search...">
+                          <i class='bx bx-search'></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+
+      <div class="lightbox">
+        <div class="wrapper">
+          <header>
+            <div class="photographer">
+              <i class="uil uil-camera"></i>
+              <span></span>
+            </div>
+            <div class="buttons">
+              <i class="uil uil-import"></i>
+              <i class="close-icon uil uil-times"></i>
+            </div>
+          </header>
+          <div class="preview-img">
+            <div class="img"><img src="" alt="preview-img"></div>
+          </div>
+        </div>
+      </div>
+      <section class="search">
+        <img src="./images/search-img.jpg" alt="search-img">
+        <div class="content">
+          <h1>Image Gallery with Yasssine Roummani</h1>
+          <p>Search and download any images within a second</p>
+          <div id="div">
+            <div class="search-box">
+              <i class="uil uil-search"></i>
+              <input type="text" placeholder="Search images">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery">
+        <ul class="images"></ul>
+        <button class="load-more">Load More</button>
+      </section>
+
+      <footer>
+        <div class="content">
+          <div class="left box">
+            <div class="upper">
+              <div class="topic">About us</div>
+              <p>Yassine Roummani is a channel where you can learn HTML,
+              CSS, and also JavaScript along with creative CSS Animations and Effects.</p>
+            </div>
+            <div class="lower">
+              <div class="topic">Contact us</div>
+              <div class="phone">
+                <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+              </div>
+              <div class="email">
+                <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="middle box">
+            <div class="topic">Our Services</div>
+            <div><a href="#">Web Design, Development</a></div>
+            <div><a href="#">Web UX Design, Reasearch</a></div>
+            <div><a href="#">Web User Interface Design</a></div>
+            <div><a href="#">Theme Development, Design</a></div>
+            <div><a href="#">Mobile Application Design</a></div>
+            <div><a href="#">Wire raming & Prototyping</a></div>
+          </div>
+          <div class="right box">
+            <div class="topic">Subscribe us</div>
+            <form action="#">
+              <input type="text" placeholder="Enter email address">
+              <input type="submit" name="" value="Send">
+              <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>Copyright © 2020 <a href="#">Yassine Roummani</a> All rights reserved</p>
+        </div>
+      </footer>
+  <script>
+
+  const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+        let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark-mode"){
+              body.classList.add("dark");
+            }
+
+  // js code to toggle dark and light mode
+        modeToggle.addEventListener("click" , () =>{
+          modeToggle.classList.toggle("active");
+          body.classList.toggle("dark");
+
+          // js code to keep user selected mode even page refresh or file reopen
+          if(!body.classList.contains("dark")){
+              localStorage.setItem("mode" , "light-mode");
+          }else{
+              localStorage.setItem("mode" , "dark-mode");
+          }
+        });
+
+  // js code to toggle search box
+          searchToggle.addEventListener("click" , () =>{
+          searchToggle.classList.toggle("active");
+        });
+  
+        
+  //   js code to toggle sidebar
+  sidebarOpen.addEventListener("click" , () =>{
+      nav.classList.add("active");
+  });
+
+  body.addEventListener("click" , e =>{
+      let clickedElm = e.target;
+
+      if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+          nav.classList.remove("active");
+      }
+  });
+
+  </script>
+
+  </body>
+
+
+  </html>
